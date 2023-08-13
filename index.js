@@ -14,13 +14,16 @@ const monster = {
     diceRoll: 4
 }
 
+
+
 function renderCharacter(data) {
-    document.getElementById(data.elementId).innerHTML = `
+    const { elementId, name, health, avatar, diceRoll } = data
+    document.getElementById(elementId).innerHTML = `
         <div class="character-card">
-            <h4 class="name"> ${data.name} </h4>
-            <img class="avatar" src="${data.avatar}"/>
-            <p class="health">health: <b> ${data.health} </b></p>
-            <div class="dice-container"><div class="dice"> ${data.diceRoll} </div></div>
+            <h4 class="name"> ${name} </h4>
+            <img class="avatar" src="${avatar}"/>
+            <p class="health">health: <b> ${health} </b></p>
+            <div class="dice-container"><div class="dice"> ${diceRoll} </div></div>
         </div>
     `
 }
